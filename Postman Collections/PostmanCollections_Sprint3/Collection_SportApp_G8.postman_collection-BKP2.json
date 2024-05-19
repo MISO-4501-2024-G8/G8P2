@@ -1,0 +1,3093 @@
+{
+	"info": {
+		"_postman_id": "b61f5d46-e9e6-4035-9948-f728ef00b95f",
+		"name": "Collection_SportApp_G8",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33278642",
+		"_collection_link": "https://sportapp-g8-miso.postman.co/workspace/Team-Workspace~6e388d27-6876-4808-8594-901b4032c812/collection/33278642-b61f5d46-e9e6-4035-9948-f728ef00b95f?action=share&source=collection_link&creator=33278642"
+	},
+	"item": [
+		{
+			"name": "sa-ms-js-registerlogin",
+			"item": [
+				{
+					"name": "Register Sport User",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"if (typeof responseBody === 'undefined') {",
+									"    var responseBody = pm.response.json();",
+									"}",
+									"if(typeof responseBody === 'string'){",
+									"    const bodyParser = JSON.parse(responseBody)",
+									"    const token = bodyParser.token;",
+									"    if (token){",
+									"        pm.globals.set(\"user_token\", token);",
+									"    }",
+									"}",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"email\": \"pepito11@example.com\",\n  \"password\": \"pepito123\",\n  \"doc_num\": \"123456789\",\n  \"doc_type\": \"CC\",\n  \"name\": \"Pepe García\",\n  \"phone\": \"3023344554\",\n  \"user_type\": \"S\",\n  \"gender\": \"M\",\n  \"age\": 35,\n  \"weight\": 80.0,\n  \"height\": 180.6,\n  \"birth_country\": \"España\",\n  \"birth_city\": \"Madrid\",\n  \"residence_country\": \"España\",\n  \"residence_city\": \"Barcelona\",\n  \"residence_seniority\": 10,\n  \"sports\": \"Atletismo\",\n  \"typePlan\":\"basico\",\n  \"acceptance_notify\": 1,\n  \"acceptance_tyc\": 1,\n  \"acceptance_personal_data\": 1\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_URL}}/register/sport_user",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"register",
+								"sport_user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register Third User",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"if (typeof responseBody === 'undefined') {",
+									"    var responseBody = pm.response.json();",
+									"}",
+									"if(typeof responseBody === 'string'){",
+									"    const bodyParser = JSON.parse(responseBody)",
+									"    const token = bodyParser.token;",
+									"    if (token){",
+									"        pm.globals.set(\"user_token\", token);",
+									"    }",
+									"}",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"third1@example.com\",\n    \"password\": \"pepito123\",\n    \"doc_num\": \"1234567899874563210\",\n    \"doc_type\": \"CC\",\n    \"name\": \"Andres Sebas Osorio\",\n    \"phone\": \"326554478\",\n    \"user_type\": \"T\",\n    \"company_creation_date\": \"20-12-2011\",\n    \"company_address\": \"Magnolia 22\",\n    \"contact_name\": \"Alex Yirsa Durango\",\n    \"company_description\": \"Example description\"\n}\n"
+						},
+						"url": {
+							"raw": "{{API_URL}}/register/third_user",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"register",
+								"third_user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register Admin User",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"if (typeof responseBody === 'undefined') {",
+									"    var responseBody = pm.response.json();",
+									"}",
+									"if(typeof responseBody === 'string'){",
+									"    const bodyParser = JSON.parse(responseBody)",
+									"    const token = bodyParser.token;",
+									"    if (token){",
+									"        pm.globals.set(\"user_token\", token);",
+									"    }",
+									"}",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"email\": \"adminimi4@example.com\",\n  \"password\": \"pepito123\",\n  \"doc_num\": \"123456789\",\n  \"doc_type\": \"CC\",\n  \"name\": \"Pepe García\",\n  \"phone\": \"3023344554\",\n  \"user_type\": \"A\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_URL}}/register/admin_user",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"register",
+								"admin_user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update sport_user plan",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"if (typeof responseBody === 'undefined') {",
+									"    var responseBody = pm.response.json();",
+									"}",
+									"if(typeof responseBody === 'string'){",
+									"    const bodyParser = JSON.parse(responseBody)",
+									"    const token = bodyParser.token;",
+									"    if (token){",
+									"        pm.globals.set(\"user_token\", token);",
+									"    }",
+									"}",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{user_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"typePlan\": \"intermedio\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_URL}}/register/typePlanUser/e2f75148",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"register",
+								"typePlanUser",
+								"e2f75148"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login User",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"if (typeof responseBody === 'undefined') {",
+									"    var responseBody = pm.response.json();",
+									"}",
+									"if(typeof responseBody === 'string'){",
+									"    const bodyParser = JSON.parse(responseBody)",
+									"    const token = bodyParser.token;",
+									"    if (token){",
+									"        pm.globals.set(\"user_token\", token);",
+									"    }",
+									"}",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"email\": \"pepito11@example.com\",\n  \"password\": \"pepito123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_URL}}/login/user",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"login",
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login Validate Token",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"if (typeof responseBody === 'undefined') {",
+									"    var responseBody = pm.response.json();",
+									"}",
+									"if(typeof responseBody === 'string'){",
+									"    const bodyParser = JSON.parse(responseBody)",
+									"    const token = bodyParser.token;",
+									"    if (token){",
+									"        pm.globals.set(\"user_token\", token);",
+									"    }",
+									"}",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{user_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{API_URL}}/login/validate_token",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"login",
+								"validate_token"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Info User",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{user_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "{{API_URL}}/user/e2f75148",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"user",
+								"e2f75148"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "sa-ms-js-third",
+			"item": [
+				{
+					"name": "Create Normal Third Product",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id_third_user\": \"f28517a6\",\n    \"typeProduct\": \"transport\",\n    \"name\": \"Transporte a Eventos\",\n    \"description\": \"Ofrecemos servicio de transporte de personal a eventos deportivos\",\n    \"value\": 5,\n    \"representative_phone\": \"3212453456\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_URL}}/third/third_product",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"third",
+								"third_product"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Medical Third Product",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id_third_user\": \"f28517a6\",\n    \"typeProduct\": \"medical\",\n    \"name\": \"Doctor Xavier 3\",\n    \"description\": \"Servicio de atencion y calidad medicos deportologos\",\n    \"value\": 50,\n    \"representative_phone\": \"3212232345\",\n    \"address\":\"Calle 123 #23-34\",\n    \"availability\":[\n        {\n            \"day\":\"lunes\",\n            \"time_start\":7,\n            \"time_end\":17\n        },\n        {\n            \"day\":\"martes\",\n            \"time_start\":7,\n            \"time_end\":17\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_URL}}/third/third_product",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"third",
+								"third_product"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Trainer Third Product",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id_third_user\": \"eaf96b53\",\n    \"typeProduct\": \"trainer\",\n    \"name\": \"Nombre Prueba\",\n    \"description\": \"Ofrece servicios de entrenamiento personalizado y muy baratos\",\n    \"value\": -20000,\n    \"representative_phone\": \"3223467890\",\n    \"availability\":[\n        {\n            \"day\":\"lunes\",\n            \"time_start\":6,\n            \"time_end\":6\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_URL}}/third/third_product",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"third",
+								"third_product"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Normal Third Product",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{API_URL}}/third/third_product/2c9cabbf",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"third",
+								"third_product",
+								"2c9cabbf"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Medical Third Product",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{API_URL}}/third/third_product/428dddb3",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"third",
+								"third_product",
+								"428dddb3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Trainer Third Product",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{API_URL}}/third/third_product/a028f73b",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"third",
+								"third_product",
+								"a028f73b"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Third Products of a Third User",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{API_URL}}/third/third_product/f28517a6",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"third",
+								"third_product",
+								"f28517a6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Third Catalog",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{API_URL}}/third/third_catalog",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"third",
+								"third_catalog"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Customer Service",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id_user\":\"\",\n    \"id_service\": \"d890e14f\",\n    \"user_name\": \"Pepito\",\n    \"user_address\": \"Calle 123 #24-45\",\n    \"user_neighborhood\": \"Engativa\",\n    \"user_phone\": \"3223443231\",\n    \"value\": 50,\n    \"service_date\":\"2024-04-19\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_URL}}/third/customer_service",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"third",
+								"customer_service"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Customer Service by id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{API_URL}}/third/customer_service/10268bac",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"third",
+								"customer_service",
+								"10268bac"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all Customer Services by UserId",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{API_URL}}/third/customer_service/nsa_49d7887b",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"third",
+								"customer_service",
+								"nsa_49d7887b"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "sa-ms-js-plan",
+			"item": [
+				{
+					"name": "Create Plan",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{user_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Plan20\",\n    \"typePlan\": \"Intermedio16\",\n    \"startDate\": \"02-02-2024\",\n    \"endDate\": \"12-31-2024\",\n    \"value\": 200\n}"
+						},
+						"url": {
+							"raw": "{{API_PLAN_URL}}/plans/plans",
+							"host": [
+								"{{API_PLAN_URL}}"
+							],
+							"path": [
+								"plans",
+								"plans"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Plans",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{user_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{API_PLAN_URL}}/plans/plans",
+							"host": [
+								"{{API_PLAN_URL}}"
+							],
+							"path": [
+								"plans",
+								"plans"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get a plan by id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{user_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{API_PLAN_URL}}/plans/plans/276489bf",
+							"host": [
+								"{{API_PLAN_URL}}"
+							],
+							"path": [
+								"plans",
+								"plans",
+								"276489bf"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Plan",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{user_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Plan - 16\",\n    \"typePlan\": \"Intermedio1\",\n    \"startDate\": \"02-03-2024\",\n    \"endDate\": \"12-31-2024\",\n    \"value\": 200\n}"
+						},
+						"url": {
+							"raw": "{{API_PLAN_URL}}/plans/plans/7bd27e91",
+							"host": [
+								"{{API_PLAN_URL}}"
+							],
+							"path": [
+								"plans",
+								"plans",
+								"7bd27e91"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete plan",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{user_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{API_PLAN_URL}}/plans/plans/276489bf",
+							"host": [
+								"{{API_PLAN_URL}}"
+							],
+							"path": [
+								"plans",
+								"plans",
+								"276489bf"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Plan Intermedio",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{user_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"monitoreoTiempoReal\": true,\n    \"alertasRiesgo\": false,\n    \"comunicacionEntrenador\": true\n}"
+						},
+						"url": {
+							"raw": "{{API_PLAN_URL}}/plans/plans_intermedio",
+							"host": [
+								"{{API_PLAN_URL}}"
+							],
+							"path": [
+								"plans",
+								"plans_intermedio"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "All Plans Intermediate",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{user_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{API_PLAN_URL}}/plans/plans_intermedio",
+							"host": [
+								"{{API_PLAN_URL}}"
+							],
+							"path": [
+								"plans",
+								"plans_intermedio"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "All Plan Intermediate By ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{user_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{API_PLAN_URL}}/plans/plans_intermedio/dbb8aa03",
+							"host": [
+								"{{API_PLAN_URL}}"
+							],
+							"path": [
+								"plans",
+								"plans_intermedio",
+								"dbb8aa03"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Plan Intermedio Update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{user_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"monitoreoTiempoReal\": true,\n    \"alertasRiesgo\": false,\n    \"comunicacionEntrenador\": false\n}"
+						},
+						"url": {
+							"raw": "{{API_PLAN_URL}}/plans/plans_intermedio/dbb8aa03",
+							"host": [
+								"{{API_PLAN_URL}}"
+							],
+							"path": [
+								"plans",
+								"plans_intermedio",
+								"dbb8aa03"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Plan Intermedio Delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{user_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{API_PLAN_URL}}/plans/plans_intermedio/dbb8aa03",
+							"host": [
+								"{{API_PLAN_URL}}"
+							],
+							"path": [
+								"plans",
+								"plans_intermedio",
+								"dbb8aa03"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Plan Premium",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{user_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"sesionesVirtuales\": 2,\n    \"masajes\": true,\n    \"cuidadoPosEjercicio\": true\n}"
+						},
+						"url": {
+							"raw": "{{API_PLAN_URL}}/plans/plans_premium",
+							"host": [
+								"{{API_PLAN_URL}}"
+							],
+							"path": [
+								"plans",
+								"plans_premium"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "All PlansPremium",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{user_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{API_PLAN_URL}}/plans/plans_premium",
+							"host": [
+								"{{API_PLAN_URL}}"
+							],
+							"path": [
+								"plans",
+								"plans_premium"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "All Plan Premium By ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{user_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{API_PLAN_URL}}/plans/plans_premium/b66bd8d6",
+							"host": [
+								"{{API_PLAN_URL}}"
+							],
+							"path": [
+								"plans",
+								"plans_premium",
+								"b66bd8d6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Plan Premium",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{user_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"sesionesVirtuales\": 3,\n    \"masajes\": true,\n    \"cuidadoPosEjercicio\": true\n}"
+						},
+						"url": {
+							"raw": "{{API_PLAN_URL}}/plans/plans_premium/b66bd8d6",
+							"host": [
+								"{{API_PLAN_URL}}"
+							],
+							"path": [
+								"plans",
+								"plans_premium",
+								"b66bd8d6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Plan Premium",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{user_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{API_PLAN_URL}}/plans/plans_premium/b66bd8d6",
+							"host": [
+								"{{API_PLAN_URL}}"
+							],
+							"path": [
+								"plans",
+								"plans_premium",
+								"b66bd8d6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create DescriptionFeature",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{user_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"tipoPlan\": \"Intermedio1\",\n    \"description\": \"Esto es una desc de un feature\"\n}"
+						},
+						"url": {
+							"raw": "{{API_PLAN_URL}}/plans/descriptionFeatures",
+							"host": [
+								"{{API_PLAN_URL}}"
+							],
+							"path": [
+								"plans",
+								"descriptionFeatures"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "All Plans DescriptionFeatures",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{user_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{API_PLAN_URL}}/plans/descriptionFeatures",
+							"host": [
+								"{{API_PLAN_URL}}"
+							],
+							"path": [
+								"plans",
+								"descriptionFeatures"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "All Plan DescriptionFeatures by id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{user_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{API_PLAN_URL}}/plans/descriptionFeatures/9362ee08",
+							"host": [
+								"{{API_PLAN_URL}}"
+							],
+							"path": [
+								"plans",
+								"descriptionFeatures",
+								"9362ee08"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update DescriptionFeature",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{user_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"tipoPlan\": \"Intermedio1\",\n    \"description\": \"Esto es una desc de un features\"\n}"
+						},
+						"url": {
+							"raw": "{{API_PLAN_URL}}/plans/descriptionFeatures/9362ee08",
+							"host": [
+								"{{API_PLAN_URL}}"
+							],
+							"path": [
+								"plans",
+								"descriptionFeatures",
+								"9362ee08"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete DescriptionFeature",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{user_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{API_PLAN_URL}}/plans/descriptionFeatures/9362ee08",
+							"host": [
+								"{{API_PLAN_URL}}"
+							],
+							"path": [
+								"plans",
+								"descriptionFeatures",
+								"9362ee08"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "sa-ms-js-plan-admin",
+			"item": [
+				{
+					"name": "Create Plan Basico",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{user_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Plan Basico\",\n    \"startDate\": \"02-02-2024\",\n    \"endDate\": \"12-31-2024\",\n    \"value\": 200\n}"
+						},
+						"url": {
+							"raw": "{{API_PLAN_URL}}/plans/planbasico",
+							"host": [
+								"{{API_PLAN_URL}}"
+							],
+							"path": [
+								"plans",
+								"planbasico"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Plan Basico-Intermedio",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{user_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Plan Intermedio\",\n    \"startDate\": \"02-02-2024\",\n    \"endDate\": \"12-31-2024\",\n    \"value\": 200,\n    \"monitoreoTiempoReal\": true,\n    \"alertasRiesgo\": false,\n    \"comunicacionEntrenador\": true\n}"
+						},
+						"url": {
+							"raw": "{{API_PLAN_URL}}/plans/planbasico_intermedio",
+							"host": [
+								"{{API_PLAN_URL}}"
+							],
+							"path": [
+								"plans",
+								"planbasico_intermedio"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Plan Basico-Premium",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{user_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Plan Premium\",\n    \"startDate\": \"02-02-2024\",\n    \"endDate\": \"12-31-2024\",\n    \"value\": 500,\n    \"monitoreoTiempoReal\": true,\n    \"alertasRiesgo\": false,\n    \"comunicacionEntrenador\": true,\n    \"sesionesVirtuales\": 2,\n    \"masajes\": true,\n    \"cuidadoPosEjercicio\": true\n}"
+						},
+						"url": {
+							"raw": "{{API_PLAN_URL}}/plans/planbasico_premium",
+							"host": [
+								"{{API_PLAN_URL}}"
+							],
+							"path": [
+								"plans",
+								"planbasico_premium"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Plan Basico",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{user_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Plan Basico\",\n    \"startDate\": \"02-02-2024\",\n    \"endDate\": \"12-31-2024\",\n    \"value\": 0\n}"
+						},
+						"url": {
+							"raw": "{{API_PLAN_URL}}/plans/planbasico/fdfc61e0",
+							"host": [
+								"{{API_PLAN_URL}}"
+							],
+							"path": [
+								"plans",
+								"planbasico",
+								"fdfc61e0"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Plan Basico-Intermedio",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{user_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Plan Intermedio\",\n    \"startDate\": \"02-02-2024\",\n    \"endDate\": \"12-31-2024\",\n    \"value\": 400,\n    \"monitoreoTiempoReal\": true,\n    \"alertasRiesgo\": false,\n    \"comunicacionEntrenador\": true\n}"
+						},
+						"url": {
+							"raw": "{{API_PLAN_URL}}/plans/planbasico_intermedio/407e5f72",
+							"host": [
+								"{{API_PLAN_URL}}"
+							],
+							"path": [
+								"plans",
+								"planbasico_intermedio",
+								"407e5f72"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Plan Basico-Premium",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{user_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Plan Premium\",\n    \"startDate\": \"02-02-2024\",\n    \"endDate\": \"12-31-2024\",\n    \"value\": 600,\n    \"monitoreoTiempoReal\": true,\n    \"alertasRiesgo\": false,\n    \"comunicacionEntrenador\": true,\n    \"sesionesVirtuales\": 2,\n    \"masajes\": true,\n    \"cuidadoPosEjercicio\": true\n}"
+						},
+						"url": {
+							"raw": "{{API_PLAN_URL}}/plans/planbasico_premium/38a3f94e",
+							"host": [
+								"{{API_PLAN_URL}}"
+							],
+							"path": [
+								"plans",
+								"planbasico_premium",
+								"38a3f94e"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Plan Basico",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{user_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{API_PLAN_URL}}/plans/planbasico/3cb75627",
+							"host": [
+								"{{API_PLAN_URL}}"
+							],
+							"path": [
+								"plans",
+								"planbasico",
+								"3cb75627"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Plan Basico-Intermedio",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{user_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{API_PLAN_URL}}/plans/planbasico_intermedio/407e5f72",
+							"host": [
+								"{{API_PLAN_URL}}"
+							],
+							"path": [
+								"plans",
+								"planbasico_intermedio",
+								"407e5f72"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Plan Basico-Premium",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{user_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{API_PLAN_URL}}/plans/planbasico_premium/7a797e38",
+							"host": [
+								"{{API_PLAN_URL}}"
+							],
+							"path": [
+								"plans",
+								"planbasico_premium",
+								"7a797e38"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Feature",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{user_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"tipoPlan\": \"premium\",\n    \"description\": \"Esto es una desc de un feature\"\n}"
+						},
+						"url": {
+							"raw": "{{API_PLAN_URL}}/plans/feature",
+							"host": [
+								"{{API_PLAN_URL}}"
+							],
+							"path": [
+								"plans",
+								"feature"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Feature",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{user_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"tipoPlan\": \"intermedio\",\n    \"description\": \"Servicio de Entrenador / Deportologo Personalizado\"\n}"
+						},
+						"url": {
+							"raw": "{{API_PLAN_URL}}/plans/feature/16095fe5",
+							"host": [
+								"{{API_PLAN_URL}}"
+							],
+							"path": [
+								"plans",
+								"feature",
+								"16095fe5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Feature",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{user_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{API_PLAN_URL}}/plans/feature/f14e9ee7",
+							"host": [
+								"{{API_PLAN_URL}}"
+							],
+							"path": [
+								"plans",
+								"feature",
+								"f14e9ee7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Features by Plan",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{API_PLAN_URL}}/plans/features/premium",
+							"host": [
+								"{{API_PLAN_URL}}"
+							],
+							"path": [
+								"plans",
+								"features",
+								"premium"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "All Plans Info",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{API_URL}}/plans/allplans",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"plans",
+								"allplans"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "All info plan by type plan",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{API_URL}}/plans/allplans/premium",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"plans",
+								"allplans",
+								"premium"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "sa-ms-py-training-mngr",
+			"item": [
+				{
+					"name": "Rest Routine",
+					"item": [
+						{
+							"name": "create_rest_routine_traning_plan",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"rest_routine_name\" : \"Hola mundo\",\r\n    \"rest_routine_description\" : \"2\" \r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{API_TRAINING}}/rest_routine_training_plan",
+									"host": [
+										"{{API_TRAINING}}"
+									],
+									"path": [
+										"rest_routine_training_plan"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get_all_rest_routine_traning_plan",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{API_TRAINING}}/rest_routine_training_plan",
+									"host": [
+										"{{API_TRAINING}}"
+									],
+									"path": [
+										"rest_routine_training_plan"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get_rest_routine_traning_plan",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{API_TRAINING}}/rest_routine_training_plan/097b03f6",
+									"host": [
+										"{{API_TRAINING}}"
+									],
+									"path": [
+										"rest_routine_training_plan",
+										"097b03f6"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update_rest_routine_traning_plan",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"rest_routine_name\" : \"Hola mundo Cardenas Cardenas\",\r\n    \"rest_routine_description\" : \"1\" ,\r\n    \"id_training_plan\" : \"3872a743\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{API_TRAINING}}/rest_routine_training_plan/097b03f6",
+									"host": [
+										"{{API_TRAINING}}"
+									],
+									"path": [
+										"rest_routine_training_plan",
+										"097b03f6"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "create_Objective_rest",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"day\":\"lunes\",\r\n    \"objective_repeats\":\"2\",\r\n    \"type_objective\" : \"2\",\r\n    \"id_routine\":\"36fddcf1\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{API_TRAINING}}/objetive_training_plan",
+									"host": [
+										"{{API_TRAINING}}"
+									],
+									"path": [
+										"objetive_training_plan"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update_Objective_rest",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"day\":\"lunes\",\r\n    \"objective_repeats\":\"2\",\r\n    \"type_objective\" : \"1\",\r\n    \"id_routine\":\"959e89ba\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{API_TRAINING}}/objetive_training_plan/2ff2b943",
+									"host": [
+										"{{API_TRAINING}}"
+									],
+									"path": [
+										"objetive_training_plan",
+										"2ff2b943"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get_Objective_rest",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{API_TRAINING}}/objetive_training_plan/2ff2b943",
+									"host": [
+										"{{API_TRAINING}}"
+									],
+									"path": [
+										"objetive_training_plan",
+										"2ff2b943"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "create_instruction_rest",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"instruction_description\":\"descripcion\",\r\n    \"instruction_time\":\"145\",\r\n    \"id_objective\":\"d3f61d9e\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{API_TRAINING}}/instruction_training_plan",
+									"host": [
+										"{{API_TRAINING}}"
+									],
+									"path": [
+										"instruction_training_plan"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update_instruction_rest",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"instruction_description\":\"descripcion\",\r\n    \"instruction_time\":\"145\",\r\n    \"id_objective\":\"3872a743\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{API_TRAINING}}/instruction_training_plan/ad9d2374",
+									"host": [
+										"{{API_TRAINING}}"
+									],
+									"path": [
+										"instruction_training_plan",
+										"ad9d2374"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get_instruction_rest",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{API_TRAINING}}/instruction_training_plan/ad9d2374",
+									"host": [
+										"{{API_TRAINING}}"
+									],
+									"path": [
+										"instruction_training_plan",
+										"ad9d2374"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "create_device_traning_plan",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"rest_device_name\": \"hola\",\r\n    \"rest_device_qty\": \"10\",\r\n    \"rental_value\":  \"5.9\",\r\n    \"id_rest_routine\" :  \"36fddcf1\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{API_TRAINING}}/rest_device_training_plan",
+									"host": [
+										"{{API_TRAINING}}"
+									],
+									"path": [
+										"rest_device_training_plan"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update_device_traning_plan",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"rest_device_name\": \"hola\",\r\n    \"rest_device_qty\": \"10\",\r\n    \"rental_value\":  \"5.9\",\r\n    \"id_rest_routine\" :  \"097b03f6\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{API_TRAINING}}/rest_device_training_plan/14f13f70",
+									"host": [
+										"{{API_TRAINING}}"
+									],
+									"path": [
+										"rest_device_training_plan",
+										"14f13f70"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get_device_traning_plan",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{API_TRAINING}}/rest_device_training_plan/14f13f70",
+									"host": [
+										"{{API_TRAINING}}"
+									],
+									"path": [
+										"rest_device_training_plan",
+										"14f13f70"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Eating Routine",
+					"item": [
+						{
+							"name": "create_eating_routine_traning_plan",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"eating_routine_name\": \"nombre\",\r\n    \"eating_routine_description\": \"descripcion\",\r\n    \"eating_routine_weeks\" :\"3\",\r\n    \"max_weight\": \"5.5\",\r\n    \"min_weight\": \"6.6\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{API_TRAINING}}/eating_routing_training_plan",
+									"host": [
+										"{{API_TRAINING}}"
+									],
+									"path": [
+										"eating_routing_training_plan"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get_all_eating_routine_traning_plan",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{API_TRAINING}}/eating_routing_training_plan",
+									"host": [
+										"{{API_TRAINING}}"
+									],
+									"path": [
+										"eating_routing_training_plan"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update_eating_routine_traning_plan",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"eating_routine_name\": \"nombre\",\r\n    \"eating_routine_description\": \"descripcion\",\r\n    \"eating_routine_weeks\" :\"3\",\r\n    \"max_weight\": \"5.5\",\r\n    \"min_weight\": \"6.6\",\r\n    \"id_training_plan\" : \"\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{API_TRAINING}}/eating_routing_training_plan/4b25a62c",
+									"host": [
+										"{{API_TRAINING}}"
+									],
+									"path": [
+										"eating_routing_training_plan",
+										"4b25a62c"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get_eating_routine_traning_plan",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{API_TRAINING}}/eating_routing_training_plan/4b25a62c",
+									"host": [
+										"{{API_TRAINING}}"
+									],
+									"path": [
+										"eating_routing_training_plan",
+										"4b25a62c"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "create_day_food_traning_plan",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"day_food_plan\":\"lunes\",\r\n    \"food\":\"food\",\r\n    \"qty\":\"25\",\r\n    \"calories\":\"1524\",\r\n    \"value\": \"5\",\r\n    \"id_eating_routine\" : \"80c076ff\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{API_TRAINING}}/day_food_training_plan",
+									"host": [
+										"{{API_TRAINING}}"
+									],
+									"path": [
+										"day_food_training_plan"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update_day_food_traning_plan",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"day_food_plan\":\"lunes\",\r\n    \"food\":\"food\",\r\n    \"qty\":\"25\",\r\n    \"calories\":\"1524\",\r\n    \"value\": \"5\",\r\n    \"id_eating_routine\" : \"4b25a62c\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{API_TRAINING}}/day_food_training_plan/053c3d66",
+									"host": [
+										"{{API_TRAINING}}"
+									],
+									"path": [
+										"day_food_training_plan",
+										"053c3d66"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get_day_food_traning_plan",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{API_TRAINING}}/day_food_training_plan/053c3d66",
+									"host": [
+										"{{API_TRAINING}}"
+									],
+									"path": [
+										"day_food_training_plan",
+										"053c3d66"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "health_check_py",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{API_TRAINING}}/",
+							"host": [
+								"{{API_TRAINING}}"
+							],
+							"path": [
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get_all_training_plan",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{API_TRAINING}}/training_plan",
+							"host": [
+								"{{API_TRAINING}}"
+							],
+							"path": [
+								"training_plan"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create_training_plan",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"name dos y tres\",\r\n    \"description\": \"description\",\r\n    \"weeks\": \"1\",\r\n    \"lunes_enabled\": \"1\",\r\n    \"martes_enabled\": \"1\",\r\n    \"miercoles_enabled\": \"1\",\r\n    \"jueves_enabled\": \"1\",\r\n    \"viernes_enabled\": \"1\",\r\n    \"typePlan\": \"typePlan\",\r\n    \"sport\": \"Atletismo\",\r\n    \"id_rest_routine\":\"097b03f6\",\r\n    \"id_eating_routine\":\"4b25a62c\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_TRAINING}}/training_plan",
+							"host": [
+								"{{API_TRAINING}}"
+							],
+							"path": [
+								"training_plan"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update_training_plan",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"name Andres\",\r\n    \"description\": \"description\",\r\n    \"weeks\": \"1\",\r\n    \"lunes_enabled\": \"1\",\r\n    \"martes_enabled\": \"1\",\r\n    \"miercoles_enabled\": \"Andres\",\r\n    \"jueves_enabled\": \"1\",\r\n    \"viernes_enabled\": \"1\",\r\n    \"typePlan\": \"typePlan\",\r\n    \"sport\": \"Atletismo\",\r\n    \"id_rest_routine\":\"097b03f6\",\r\n    \"id_eating_routine\":\"4b25a62c\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_TRAINING}}/training_plan/082e0205",
+							"host": [
+								"{{API_TRAINING}}"
+							],
+							"path": [
+								"training_plan",
+								"082e0205"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get_training_plan",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{API_TRAINING}}/training_plan/082e0205",
+							"host": [
+								"{{API_TRAINING}}"
+							],
+							"path": [
+								"training_plan",
+								"082e0205"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create_Objective_traning_plan",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"day\":\"lunes\",\r\n    \"objective_repeats\":\"2\",\r\n    \"type_objective\" : \"1\",\r\n    \"id_routine\":\"03d84f21\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_TRAINING}}/objetive_training_plan",
+							"host": [
+								"{{API_TRAINING}}"
+							],
+							"path": [
+								"objetive_training_plan"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update_Objective_traning_plan",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"day\":\"lunes\",\r\n    \"objective_repeats\":\"2\",\r\n    \"type_objective\" : \"1\",\r\n    \"id_routine\":\"082e0205\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_TRAINING}}/objetive_training_plan/0630ee07",
+							"host": [
+								"{{API_TRAINING}}"
+							],
+							"path": [
+								"objetive_training_plan",
+								"0630ee07"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get_Objective_traning_plan",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{API_TRAINING}}/objetive_training_plan/0630ee07",
+							"host": [
+								"{{API_TRAINING}}"
+							],
+							"path": [
+								"objetive_training_plan",
+								"0630ee07"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create_instruction_traning_plan",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"instruction_description\":\"descripcion\",\r\n    \"instruction_time\":\"145\",\r\n    \"id_objective\":\"124cccde\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_TRAINING}}/instruction_training_plan",
+							"host": [
+								"{{API_TRAINING}}"
+							],
+							"path": [
+								"instruction_training_plan"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update_instruction_traning_plan",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"instruction_description\":\"descripcion\",\r\n    \"instruction_time\":\"145\",\r\n    \"id_objective\":\"0630ee07\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_TRAINING}}/instruction_training_plan/b3b8ec00",
+							"host": [
+								"{{API_TRAINING}}"
+							],
+							"path": [
+								"instruction_training_plan",
+								"b3b8ec00"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get_instruction_traning_plan",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{API_TRAINING}}/instruction_training_plan/b3b8ec00",
+							"host": [
+								"{{API_TRAINING}}"
+							],
+							"path": [
+								"instruction_training_plan",
+								"b3b8ec00"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create_risk_alerts_traning_plan",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"stop_training\": \"0\",\r\n    \"notifications\": \"1\",\r\n    \"enable_phone\": \"0\",\r\n    \"id_training_plan\" : \"03d84f21\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_TRAINING}}/risk_alerts_training_plan",
+							"host": [
+								"{{API_TRAINING}}"
+							],
+							"path": [
+								"risk_alerts_training_plan"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update_risk_alerts_traning_plan",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"stop_training\": \"0\",\r\n    \"notifications\": \"0\",\r\n    \"enable_phone\": \"1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_TRAINING}}/risk_alerts_training_plan/082e0205",
+							"host": [
+								"{{API_TRAINING}}"
+							],
+							"path": [
+								"risk_alerts_training_plan",
+								"082e0205"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get_risk_alerts_traning_plan",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{API_TRAINING}}/risk_alerts_training_plan/082e0205",
+							"host": [
+								"{{API_TRAINING}}"
+							],
+							"path": [
+								"risk_alerts_training_plan",
+								"082e0205"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "sa-ms-py-calendar-mngr",
+			"item": [
+				{
+					"name": "health_check_py",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{API_PY_URL}}/",
+							"host": [
+								"{{API_PY_URL}}"
+							],
+							"path": [
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create_training_session",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id_sport_user\": \"e2f75148\",\r\n    \"id_event\": \"59785783\",\r\n    \"event_category\": \"evento\",\r\n    \"sport_type\": \"Ciclismo\",\r\n    \"session_date\": \"2024-05-28 14:30:00\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_PY_URL}}/training_session",
+							"host": [
+								"{{API_PY_URL}}"
+							],
+							"path": [
+								"training_session"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Training Sessions",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{API_PY_URL}}/training_session",
+							"host": [
+								"{{API_PY_URL}}"
+							],
+							"path": [
+								"training_session"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Training Sessions by User ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{API_PY_URL}}/training_session/e2f75148",
+							"host": [
+								"{{API_PY_URL}}"
+							],
+							"path": [
+								"training_session",
+								"e2f75148"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update_training_session",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id_sport_user\": \"e2f75148\",\r\n    \"id_event\": \"59785783\",\r\n    \"event_category\": \"evento\",\r\n    \"sport_type\": \"Atletismo\",\r\n    \"session_date\": \"2024-05-28 14:30:00\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_PY_URL}}/training_session/236f1016",
+							"host": [
+								"{{API_PY_URL}}"
+							],
+							"path": [
+								"training_session",
+								"236f1016"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete_training_session",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{API_PY_URL}}/training_session/f7a83a9c",
+							"host": [
+								"{{API_PY_URL}}"
+							],
+							"path": [
+								"training_session",
+								"f7a83a9c"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create_sport_sessions",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id_training_session\":\"id_test_1\",\r\n    \"location\": \"Manizales\",\r\n    \"session_event\":\"2023-02-28 14:30:00\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_PY_URL}}/sport_session",
+							"host": [
+								"{{API_PY_URL}}"
+							],
+							"path": [
+								"sport_session"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Sport Sessions",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{API_PY_URL}}/training_session",
+							"host": [
+								"{{API_PY_URL}}"
+							],
+							"path": [
+								"training_session"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Sport Session Data by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{API_PY_URL}}/sport_session/id_test",
+							"host": [
+								"{{API_PY_URL}}"
+							],
+							"path": [
+								"sport_session",
+								"id_test"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "sa-ms-py-event-mngr",
+			"item": [
+				{
+					"name": "Health Check",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{API_PY_URL}}/",
+							"host": [
+								"{{API_PY_URL}}"
+							],
+							"path": [
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Todos los Eventos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{API_PY_URL}}/eventos",
+							"host": [
+								"{{API_PY_URL}}"
+							],
+							"path": [
+								"eventos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Crear Eventos",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"event_name\":\"ciclismo 10k\",\n    \"event_description\":\"Ruta de ciclismo 10K\",\n    \"event_location\":\"Bogota\",\n    \"event_type\":\"virtual\",\n    \"sport\":\"Ciclismo\",\n    \"link\":\"http://linkreu.edu\",\n    \"event_date\": \"2024-05-28 14:30:00\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_PY_URL}}/eventos",
+							"host": [
+								"{{API_PY_URL}}"
+							],
+							"path": [
+								"eventos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Evento by Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{API_PY_URL}}/eventos/65c8eb6a",
+							"host": [
+								"{{API_PY_URL}}"
+							],
+							"path": [
+								"eventos",
+								"65c8eb6a"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar Evento",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"event_name\":\"Carrera 5k\",\n    \"event_description\":\"Carrera de 5K\",\n    \"event_location\":\"Bogota\",\n    \"event_type\":\"virtual\",\n    \"sport\":\"Atletismo\",\n    \"link\":\"http://linkreu.edu\",\n    \"event_date\": \"2024-05-28 14:30:00\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_PY_URL}}/eventos/16c0eaf0",
+							"host": [
+								"{{API_PY_URL}}"
+							],
+							"path": [
+								"eventos",
+								"16c0eaf0"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar Evento",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"event_name\":\"ciclismo 13k\",\n    \"event_description\":\"Ruta de ciclismo 13K\",\n    \"event_location\":\"Bogota\",\n    \"event_type\":\"virtual\",\n    \"link\":\"http://linkreu.edu\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_PY_URL}}/eventos/65c8eb6a",
+							"host": [
+								"{{API_PY_URL}}"
+							],
+							"path": [
+								"eventos",
+								"65c8eb6a"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "sa-ms-py-route-mngr",
+			"item": [
+				{
+					"name": "Health Check",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{API_PY_URL}}/",
+							"host": [
+								"{{API_PY_URL}}"
+							],
+							"path": [
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Todas las Rutas",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{API_PY_URL}}/rutas",
+							"host": [
+								"{{API_PY_URL}}"
+							],
+							"path": [
+								"rutas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Crear Rutas",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"route_name\":\"Ruta 5K Universitaria\",\n    \"route_description\":\"Ruta de practica 5K Universitaria\",\n    \"route_location_A\":\"PUJ\",\n    \"route_location_B\":\"Andes\",\n    \"route_latlon_A\":\"4.628478706528637, -74.06472730115881\",\n    \"route_latlon_B\":\"4.601489371017458, -74.06612808714058\",\n    \"route_type\":\"virtual\",\n    \"route_date\": \"2024-05-28 14:30:00\",\n    \"sport\":\"Ciclismo\",\n    \"link\":\"http://linkreu.edu\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_PY_URL}}/rutas",
+							"host": [
+								"{{API_PY_URL}}"
+							],
+							"path": [
+								"rutas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Ruta by Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{API_PY_URL}}/rutas/75d553e0",
+							"host": [
+								"{{API_PY_URL}}"
+							],
+							"path": [
+								"rutas",
+								"75d553e0"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar Ruta",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"route_name\":\"Carrera de 3K Universitaria\",\n    \"route_description\":\"Carrera de practica 3K Universitaria\",\n    \"route_location_A\":\"PUJ\",\n    \"route_location_B\":\"Andes\",\n    \"route_latlon_A\":\"4.628478706528637, -74.06472730115881\",\n    \"route_latlon_B\":\"4.601489371017458, -74.06612808714058\",\n    \"route_type\":\"virtual\",\n    \"route_date\": \"2024-05-29 14:30:00\",\n    \"sport\":\"Atletismo\",\n    \"link\":\"http://linkreu.edu\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_PY_URL}}/rutas/5b3deeeb",
+							"host": [
+								"{{API_PY_URL}}"
+							],
+							"path": [
+								"rutas",
+								"5b3deeeb"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar Ruta",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"event_name\":\"ciclismo 13k\",\n    \"event_description\":\"Ruta de ciclismo 13K\",\n    \"event_location\":\"Bogota\",\n    \"event_type\":\"virtual\",\n    \"link\":\"http://linkreu.edu\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_PY_URL}}/rutas/75d553e0",
+							"host": [
+								"{{API_PY_URL}}"
+							],
+							"path": [
+								"rutas",
+								"75d553e0"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
